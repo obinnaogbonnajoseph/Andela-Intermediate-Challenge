@@ -110,6 +110,8 @@ public class MainActivity extends AppCompatActivity implements
         mDevelopersList.setVisibility(View.INVISIBLE);
         /* Then, show the error */
         mErrorMessageDisplay.setVisibility(View.VISIBLE);
+        /* Also hide the progress bar */
+        mLoadingIndicator.setVisibility(View.INVISIBLE);
     }
 
     /**
@@ -117,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements
      */
     private void showLoadingIndicator() {
         mDevelopersList.setVisibility(View.INVISIBLE);
+        mErrorMessageDisplay.setVisibility(View.INVISIBLE);
         mLoadingIndicator.setVisibility(View.VISIBLE);
     }
 

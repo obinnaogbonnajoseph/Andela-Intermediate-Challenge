@@ -6,11 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
-
 import java.util.ArrayList;
+
+
 
 /**
  * This exposes a list of gitHub users data to a RecyclerView.
@@ -25,9 +25,8 @@ class DevAdapter extends RecyclerView.Adapter<DevAdapter.DeveloperViewHolder> {
     * our RecyclerView
     */
     private final DevAdapterOnClickHandler mClickHandler;
-
+    // Pass in a context
     private Context context;
-
     /**
      * The interface that receives onClick messages.
      */
@@ -79,9 +78,10 @@ class DevAdapter extends RecyclerView.Adapter<DevAdapter.DeveloperViewHolder> {
             String username = currentDeveloper.getDevName();
             String userUrl = currentDeveloper.getProfileUrl();
             String imageUrl = currentDeveloper.getImageUrl();
+            String userInfo = currentDeveloper.getmUserInfo();
 
             // String array to be passed as intent to the next activity.
-            String[] profile = {username,userUrl,imageUrl};
+            String[] profile = {username,userUrl,imageUrl,userInfo};
             mClickHandler.onClick(profile);
         }
     }
@@ -115,7 +115,8 @@ class DevAdapter extends RecyclerView.Adapter<DevAdapter.DeveloperViewHolder> {
     @Override
     public void onBindViewHolder(DeveloperViewHolder holder, int position) {
         Developer currentDeveloper = mDevData.get(position);
-        ImageLoader mImageLoader = MySingleton.getInstance(context).getImageLoader();
+        ImageLoader mImageLoader = MySingleton.getInstance(context)
+                .getImageLoader();
         String devName = currentDeveloper.getDevName();
         String imageUrl = currentDeveloper.getImageUrl();
         holder.listItemDevView.setText(devName);

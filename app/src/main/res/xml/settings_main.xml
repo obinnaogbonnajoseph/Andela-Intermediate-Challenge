@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/settings_title">
+
+    <!-- language -->
+    <ListPreference
+        android:defaultValue="@string/settings_language_default"
+        android:entries="@array/settings_language_labels"
+        android:entryValues="@array/settings_language_values"
+        android:key="@string/settings_language_key"
+        android:title="@string/settings_language_label"/>
+
+    <!-- location -->
+    <EditTextPreference
+        android:defaultValue="@string/settings_location_default"
+        android:inputType="text"
+        android:key="@string/settings_location_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_location_label" />
+
+    <!-- repos -->
+    <EditTextPreference
+        android:defaultValue="@string/settings_repos_default"
+        android:inputType="number"
+        android:key="@string/settings_repos_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_repos_label" />
+
+    <!-- followers -->
+    <EditTextPreference
+        android:defaultValue="@string/settings_followers_default"
+        android:inputType="number"
+        android:key="@string/settings_followers_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_followers_label" />
+
+</PreferenceScreen>

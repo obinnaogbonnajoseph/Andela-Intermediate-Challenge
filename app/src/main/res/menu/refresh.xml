@@ -2,8 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/refresh"
+        android:id="@+id/refresh_page"
         android:title="@string/refresh"
         android:orderInCategory="1"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/search_user"
+        android:title="@string/search_title"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="ifRoom"
+        app:actionViewClass="android.widget.SearchView" />
+
+    <item android:id="@+id/settings"
+        android:title="@string/settings"
+        android:orderInCategory="2"
         app:showAsAction="never"/>
 </menu>

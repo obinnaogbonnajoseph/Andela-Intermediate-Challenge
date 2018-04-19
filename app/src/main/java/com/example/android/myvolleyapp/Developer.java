@@ -17,6 +17,9 @@ class Developer {
     /** User's image url*/
     private String mImageUrl;
 
+    /** Array containing bio, repo, followers and following info*/
+    private String mUserInfo;
+
     /**
      * Constructs a new Developer object.
      *
@@ -24,10 +27,11 @@ class Developer {
      * @param profileUrl is the User's profile url
      *  @param imageUrl is the User's image url
      */
-    Developer(String devName, String profileUrl, String imageUrl) {
+    Developer(String devName, String profileUrl, String imageUrl, String userInfo) {
         mDevName = devName;
         mProfileUrl = profileUrl;
         mImageUrl = imageUrl;
+        mUserInfo = userInfo;
     }
     /**
      * Returns the gitHub username.
@@ -46,4 +50,8 @@ class Developer {
      */
     String getImageUrl() {return mImageUrl;}
 
+    /**
+     * Returns the total number of repos' url
+     */
+    String getmUserInfo() {return mUserInfo;}
 }
